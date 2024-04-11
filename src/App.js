@@ -1,22 +1,39 @@
-import logo from './logo.svg';
-import './App.css';
+import './css/App.css';
+import { useState } from 'react';
 
 function App() {
+  const [message, setMessage] = useState('');
+  function handleClick(){
+    setMessage('You click me!');
+  }
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <h2>
+          Let test the Frontend.
+        </h2>
+        
+        <br/>
+        
+        <button className="data-button" onClick={handleClick}>Click me</button>
+
+        <br/>
+
+        {message && <p rel='data-message'>{message}</p>}
+
+        <br />
+        
+        <a className="link-subs" href="subscribe">Subscribe to us!</a>
+
+        <br />
+
+        <h3>Let test an API</h3>
+        <a className="link-Api" href="api">Country API</a>
+
+        <br />
+
+        <h3>Customer Page</h3>
+        <a className="link-Customer" href="customers">Customer</a>
       </header>
     </div>
   );
